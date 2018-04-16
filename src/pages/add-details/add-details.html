@@ -1,0 +1,60 @@
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-title>Details</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="close()">
+        <ion-icon name="close"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+
+  <form [formGroup]="todo" (ngSubmit)="save()">
+    <ion-item>
+      <ion-label floating>Name</ion-label>
+      <ion-input type="text" formControlName="title"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>Gender</ion-label>
+      <ion-input type="text" formControlName="gender"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>Address</ion-label>
+      <ion-textarea formControlName="address"></ion-textarea>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>Date Of Birth</ion-label>
+      <ion-input type="text" formControlName="dateOfBirth"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>Date Of Addmisssion</ion-label>
+      <ion-input type="text" formControlName="dateOfAddmisssion"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>Parent Name</ion-label>
+      <ion-input type="text" formControlName="parentName"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>phoneNo</ion-label>
+      <ion-input type="text" formControlName="phoneNo"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>mobileNo</ion-label>
+      <ion-input type="text" formControlName="mobileNo"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>Description</ion-label>
+      <ion-textarea formControlName="description"></ion-textarea>
+    </ion-item>
+    <button ion-button block outline type="submit" [disabled]="!todo.valid">Submit</button>
+  </form>
+
+  <!-- <button ion-button block color="light" outline>Save</button>
+    <button ion-button block color="primary" (click)="save()"  outline>Save</button> -->
+
+</ion-content>

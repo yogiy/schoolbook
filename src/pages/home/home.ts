@@ -1,14 +1,26 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, ModalController } from 'ionic-angular';
 
+@IonicPage()
 @Component({
   selector: 'page-home',
-  templateUrl: 'home.html'
+  templateUrl: 'home.html',
 })
 export class HomePage {
 
-  constructor(public navCtrl: NavController) {
+  constructor(
+    public modalCtrl: ModalController,
+    public navCtrl: NavController, 
+    public navParams: NavParams) {
+  }
 
+  ionViewDidLoad() {
+    console.log('ionViewDidLoad HomePage');
+  }
+
+  addToList(){
+    let modal = this.modalCtrl.create("AddDetailsPage");
+    modal.present();
   }
 
 }
